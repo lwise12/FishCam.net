@@ -26,7 +26,7 @@ body{
 }
 
 header{
-    background:#2e5b4f;
+    background:#45685c;
     color:white;
     text-align:center;
     padding:20px;
@@ -43,7 +43,7 @@ header p{
 }
 
 .navbar{
-    background:#7b9b76;
+    background:#8d9f81;
     text-align:center;
     padding:10px;
     border-bottom:2px solid #4d6654;
@@ -61,48 +61,59 @@ header p{
 }
 
 .content{
-    width:70%;
+    width:75%;
     padding:20px;
 }
 
 .sidebar{
-    width:30%;
+    width:25%;
     padding:15px;
     background:#e5dfc8;
     border-left:2px solid #b5aa88;
 }
 
 .box{
-    background:white;
-    border:2px solid #7b9b76;
+    background:#f8f8f8;
+    border:2px solid #8d9f81;
     margin-bottom:15px;
     padding:10px;
 }
 
 .box h3{
     margin-top:0;
-    background:#7b9b76;
+    background:#8d9f81;
     color:white;
     padding:5px;
     font-size:14px;
 }
 
+/* Stream frame */
 .stream-box{
     background:black;
     border:4px solid #7b9b76;
     padding:10px;
 }
 
-iframe{
+/* Proper widescreen aspect ratio */
+.stream-wrapper{
+    position:relative;
     width:100%;
-    height:650px;
+    aspect-ratio:16/9;
+}
+
+.stream-wrapper iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     border:none;
 }
 
 .footer{
     text-align:center;
     padding:20px;
-    background:#2e5b4f;
+    background:#45685c;
     color:white;
     margin-top:20px;
 }
@@ -141,10 +152,12 @@ iframe{
 
 <div class="stream-box">
 
+<div class="stream-wrapper">
 <iframe
 src="https://player.twitch.tv/?channel=unnamed_tributary&parent=lwise12.github.io"
 allowfullscreen>
 </iframe>
+</div>
 
 </div>
 
