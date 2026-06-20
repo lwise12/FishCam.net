@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FishCam.net</title>
+
+<title>FISHCAM.NET - NODE 07</title>
 
 <style>
 
@@ -13,49 +15,82 @@
 
 body{
     margin:0;
-    background:#d8d0b0;
     font-family:Verdana,Arial,sans-serif;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,.025) 0px,
+            rgba(255,255,255,.025) 1px,
+            transparent 2px,
+            transparent 4px
+        ),
+        radial-gradient(circle at top,#32104f 0%,#13081f 40%,#040404 100%);
+    color:#e8e8e8;
 }
 
 #container{
     width:95%;
     max-width:1400px;
     margin:20px auto;
-    background:#f4f0de;
-    border-left:4px solid #3b5d4f;
-    border-right:4px solid #3b5d4f;
+    background:rgba(0,0,0,.92);
+    border:2px solid #7b2cff;
+    box-shadow:
+        0 0 15px rgba(123,44,255,.7),
+        0 0 60px rgba(123,44,255,.25);
 }
 
 header{
-    background:#6a776d;
-    color:white;
     text-align:center;
-    padding:25px;
+    padding:35px;
+    background:
+        linear-gradient(
+            180deg,
+            #421566 0%,
+            #14091f 100%
+        );
+    border-bottom:2px solid #ff004c;
 }
 
 header h1{
     margin:0;
-    font-size:64px;
+    font-size:78px;
+    letter-spacing:6px;
+    color:#ff004c;
+    text-shadow:
+        0 0 10px #ff004c,
+        0 0 25px #ff004c,
+        0 0 50px #ff004c;
+}
+
+header p{
+    margin:5px;
+    color:#c4afff;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .navbar{
-    background:#9da891;
     text-align:center;
-    padding:12px;
+    background:#100818;
+    padding:14px;
+    border-bottom:1px solid #5f2cc9;
 }
 
 .navbar a{
-    color:white;
+    color:#b68cff;
     text-decoration:none;
     margin:0 20px;
     font-weight:bold;
+}
+
+.navbar a:hover{
+    color:#ff4c8f;
 }
 
 .main-top{
     display:flex;
     gap:15px;
     padding:15px;
-    align-items:flex-start;
 }
 
 .video-column{
@@ -63,21 +98,24 @@ header h1{
 }
 
 .sidebar{
-    width:260px;
+    width:280px;
     flex-shrink:0;
 }
 
 .stream-title{
+    color:#ff004c;
     font-size:28px;
-    font-weight:bold;
-    color:#35584b;
+    font-family:Courier New,monospace;
+    letter-spacing:2px;
     margin-bottom:10px;
 }
 
 .stream-box{
     background:black;
-    border:4px solid #7b9b76;
-    padding:8px;
+    border:2px solid #ff004c;
+    padding:10px;
+    box-shadow:
+        0 0 25px rgba(255,0,76,.45);
 }
 
 .stream-wrapper{
@@ -95,18 +133,20 @@ header h1{
 }
 
 .box{
-    background:#f8f8f8;
-    border:2px solid #8d9f81;
+    background:#090910;
+    border:1px solid #4d2f81;
     margin-bottom:12px;
     padding:10px;
 }
 
 .box h3{
     margin:0 0 10px 0;
-    background:#8d9f81;
-    color:white;
-    padding:6px;
-    font-size:14px;
+    background:#281344;
+    color:#ff4c8f;
+    padding:7px;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
 .full-width{
@@ -122,18 +162,31 @@ header h1{
 
 .counter{
     background:black;
-    color:#00ff00;
+    color:#ff004c;
     text-align:center;
-    padding:8px;
-    font-family:Courier New,monospace;
+    padding:10px;
     font-size:20px;
+    font-family:Courier New,monospace;
+    text-shadow:0 0 10px #ff004c;
 }
 
 .footer{
-    background:#45685c;
-    color:white;
+    background:#0e0716;
+    color:#b68cff;
     text-align:center;
     padding:15px;
+    border-top:1px solid #5f2cc9;
+}
+
+.telemetry{
+    color:#66ffcc;
+    font-family:Courier New,monospace;
+    line-height:1.6;
+}
+
+.rec{
+    color:#ff004c;
+    font-weight:bold;
 }
 
 @media(max-width:1000px){
@@ -151,7 +204,7 @@ header h1{
 }
 
 header h1{
-    font-size:42px;
+    font-size:48px;
 }
 
 }
@@ -164,16 +217,22 @@ header h1{
 <div id="container">
 
 <header>
-<h1>FishCam.net</h1>
-<p>Aquatic Observation Project</p>
-<p>Live Monitoring Since 2026</p>
+
+<h1>FISHCAM.NET</h1>
+
+<p>NORTH AMERICAN AQUATIC MONITORING NETWORK</p>
+
+<p>NODE 07 • ACTIVE FEED • ESTABLISHED 1997</p>
+
 </header>
 
 <div class="navbar">
-<a href="#">Home</a>
-<a href="#">Species List</a>
-<a href="#">Camera Info</a>
-<a href="#">About</a>
+
+<a href="#">NODES</a>
+<a href="#">SPECIES</a>
+<a href="#">ARCHIVE</a>
+<a href="#">DATA</a>
+
 </div>
 
 <div class="main-top">
@@ -181,16 +240,22 @@ header h1{
 <div class="video-column">
 
 <div class="stream-title">
-LIVE CAMERA FEED
+
+<span class="rec">● REC</span> AQUATIC SURVEILLANCE FEED
+
 </div>
 
 <div class="stream-box">
+
 <div class="stream-wrapper">
+
 <iframe
 src="https://player.twitch.tv/?channel=unnamed_tributary&parent=lwise12.github.io"
 allowfullscreen>
 </iframe>
+
 </div>
+
 </div>
 
 </div>
@@ -198,28 +263,53 @@ allowfullscreen>
 <div class="sidebar">
 
 <div class="box">
-<h3>Camera Status</h3>
-Camera: ONLINE<br>
-Infrared Mode: ACTIVE<br>
-Recording: YES
+
+<h3>Node Status</h3>
+
+<div class="telemetry">
+NODE: 07<br>
+UPLINK: ONLINE<br>
+RECORDING: YES<br>
+MOTION: DETECTED<br>
+SIGNAL: 98%
+</div>
+
 </div>
 
 <div class="box">
-<h3>Current Conditions</h3>
-Water Temp: 74°F<br>
-Weather: Clear<br>
-Time: Night Observation
+
+<h3>Water Telemetry</h3>
+
+<div class="telemetry">
+TEMP: 74°F<br>
+PH: 7.4<br>
+CLARITY: GOOD<br>
+FLOW: STABLE
+</div>
+
 </div>
 
 <div class="box">
-<h3>Fish of the Week</h3>
-<b>Bluegill</b><br><br>
-Bluegill are among the most common freshwater fish in North America.
+
+<h3>Detected Species</h3>
+
+<div class="telemetry">
+► BLUEGILL<br>
+► RABBIT SNAIL<br>
+► MYSTERY SNAIL<br>
+► UNKNOWN SHADOW
+</div>
+
 </div>
 
 <div class="box">
-<h3>Visitor Counter</h3>
-<div class="counter">000042</div>
+
+<h3>Visitor Count</h3>
+
+<div class="counter">
+000042
+</div>
+
 </div>
 
 </div>
@@ -229,11 +319,16 @@ Bluegill are among the most common freshwater fish in North America.
 <div class="full-width">
 
 <div class="box">
-<h3>About This Aquarium</h3>
 
-This live camera monitors a heavily planted freshwater aquarium.
-The stream operates continuously and allows observation of fish
-behavior, snail activity, feeding events, and plant growth.
+<h3>Node 07 Log</h3>
+
+Monitoring station activated in 1997 as part of the North American
+Aquatic Monitoring Network.
+
+Node 07 remains operational and continues recording biological
+activity within the observation zone.
+
+No anomalous events have been reported.
 
 </div>
 
@@ -248,25 +343,27 @@ behavior, snail activity, feeding events, and plant growth.
 06/20/26 - Bluegill<br>
 06/19/26 - Rabbit Snail<br>
 06/18/26 - Mystery Snail<br>
-06/17/26 - Mosquito Larvae
+06/17/26 - Unknown Reflection
 
 </div>
 
 <div class="box">
 
-<h3>Interesting Facts</h3>
+<h3>System Notes</h3>
 
-Many fish can detect movement through their lateral line system.
+Several unexplained shadows have been observed during nighttime
+recording periods.
 
-Aquatic plants help remove excess nutrients from the water and
-provide shelter for fish and invertebrates.
+Review archived footage if unusual movement is detected.
 
 </div>
 
 </div>
 
 <div class="footer">
-FishCam.net Educational Observation Project
+
+FISHCAM.NET • NODE 07 • AQUATIC MONITORING NETWORK
+
 </div>
 
 </div>
