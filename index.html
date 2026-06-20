@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FISHCAM.NET - NODE 07</title>
+<title>FishCam.net - Marine Observation Station</title>
 
 <style>
 
@@ -15,76 +15,65 @@
 
 body{
     margin:0;
-    font-family:Verdana,Arial,sans-serif;
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            rgba(255,255,255,.025) 0px,
-            rgba(255,255,255,.025) 1px,
-            transparent 2px,
-            transparent 4px
-        ),
-        radial-gradient(circle at top,#32104f 0%,#13081f 40%,#040404 100%);
-    color:#e8e8e8;
+    background:#0f1314;
+    color:#d7cfb3;
+    font-family:Georgia, serif;
+    background-image:
+        radial-gradient(circle at top, rgba(60,80,80,.35), transparent 40%);
 }
 
 #container{
     width:95%;
     max-width:1400px;
     margin:20px auto;
-    background:rgba(0,0,0,.92);
-    border:2px solid #7b2cff;
-    box-shadow:
-        0 0 15px rgba(123,44,255,.7),
-        0 0 60px rgba(123,44,255,.25);
+    background:#1a2020;
+    border:2px solid #4f5d57;
+    box-shadow:0 0 30px rgba(0,0,0,.7);
 }
 
 header{
     text-align:center;
-    padding:35px;
+    padding:40px;
     background:
         linear-gradient(
-            180deg,
-            #421566 0%,
-            #14091f 100%
+            to bottom,
+            #2f3a39,
+            #1a2020
         );
-    border-bottom:2px solid #ff004c;
+    border-bottom:2px solid #5e6a62;
 }
 
 header h1{
     margin:0;
-    font-size:78px;
-    letter-spacing:6px;
-    color:#ff004c;
-    text-shadow:
-        0 0 10px #ff004c,
-        0 0 25px #ff004c,
-        0 0 50px #ff004c;
+    font-size:72px;
+    color:#d7cfb3;
+    letter-spacing:4px;
+    text-transform:uppercase;
 }
 
 header p{
-    margin:5px;
-    color:#c4afff;
+    margin:6px;
+    color:#9ea38f;
     letter-spacing:2px;
     text-transform:uppercase;
 }
 
 .navbar{
+    background:#232a29;
     text-align:center;
-    background:#100818;
-    padding:14px;
-    border-bottom:1px solid #5f2cc9;
+    padding:12px;
+    border-bottom:1px solid #4f5d57;
 }
 
 .navbar a{
-    color:#b68cff;
+    color:#b8ad84;
     text-decoration:none;
     margin:0 20px;
     font-weight:bold;
 }
 
 .navbar a:hover{
-    color:#ff4c8f;
+    color:white;
 }
 
 .main-top{
@@ -98,24 +87,22 @@ header p{
 }
 
 .sidebar{
-    width:280px;
+    width:300px;
     flex-shrink:0;
 }
 
 .stream-title{
-    color:#ff004c;
-    font-size:28px;
-    font-family:Courier New,monospace;
-    letter-spacing:2px;
+    font-size:24px;
     margin-bottom:10px;
+    color:#c8b88a;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .stream-box{
-    background:black;
-    border:2px solid #ff004c;
+    background:#0a0d0d;
+    border:3px solid #5e6a62;
     padding:10px;
-    box-shadow:
-        0 0 25px rgba(255,0,76,.45);
 }
 
 .stream-wrapper{
@@ -133,20 +120,19 @@ header p{
 }
 
 .box{
-    background:#090910;
-    border:1px solid #4d2f81;
+    background:#232827;
+    border:1px solid #4f5d57;
     margin-bottom:12px;
     padding:10px;
 }
 
 .box h3{
     margin:0 0 10px 0;
-    background:#281344;
-    color:#ff4c8f;
-    padding:7px;
-    font-size:13px;
-    letter-spacing:1px;
+    color:#c8b88a;
+    border-bottom:1px solid #4f5d57;
+    padding-bottom:5px;
     text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .full-width{
@@ -160,33 +146,25 @@ header p{
     padding:0 15px 15px 15px;
 }
 
+.log{
+    font-family:"Courier New", monospace;
+    color:#b9c0a3;
+    line-height:1.7;
+}
+
 .counter{
-    background:black;
-    color:#ff004c;
     text-align:center;
-    padding:10px;
-    font-size:20px;
-    font-family:Courier New,monospace;
-    text-shadow:0 0 10px #ff004c;
+    font-size:22px;
+    letter-spacing:3px;
+    color:#d7cfb3;
 }
 
 .footer{
-    background:#0e0716;
-    color:#b68cff;
     text-align:center;
     padding:15px;
-    border-top:1px solid #5f2cc9;
-}
-
-.telemetry{
-    color:#66ffcc;
-    font-family:Courier New,monospace;
-    line-height:1.6;
-}
-
-.rec{
-    color:#ff004c;
-    font-weight:bold;
+    background:#151919;
+    border-top:1px solid #4f5d57;
+    color:#8d9384;
 }
 
 @media(max-width:1000px){
@@ -204,7 +182,7 @@ header p{
 }
 
 header h1{
-    font-size:48px;
+    font-size:42px;
 }
 
 }
@@ -218,20 +196,20 @@ header h1{
 
 <header>
 
-<h1>FISHCAM.NET</h1>
+<h1>FishCam.net</h1>
 
-<p>NORTH AMERICAN AQUATIC MONITORING NETWORK</p>
+<p>Marine Observation Station</p>
 
-<p>NODE 07 • ACTIVE FEED • ESTABLISHED 1997</p>
+<p>Field Research Feed • Established 1997</p>
 
 </header>
 
 <div class="navbar">
 
-<a href="#">NODES</a>
-<a href="#">SPECIES</a>
-<a href="#">ARCHIVE</a>
-<a href="#">DATA</a>
+<a href="#">Home</a>
+<a href="#">Species</a>
+<a href="#">Field Notes</a>
+<a href="#">Archive</a>
 
 </div>
 
@@ -241,7 +219,7 @@ header h1{
 
 <div class="stream-title">
 
-<span class="rec">● REC</span> AQUATIC SURVEILLANCE FEED
+Observation Camera No. 1
 
 </div>
 
@@ -264,47 +242,39 @@ allowfullscreen>
 
 <div class="box">
 
-<h3>Node Status</h3>
+<h3>Current Conditions</h3>
 
-<div class="telemetry">
-NODE: 07<br>
-UPLINK: ONLINE<br>
-RECORDING: YES<br>
-MOTION: DETECTED<br>
-SIGNAL: 98%
-</div>
+Water Temperature: 74°F<br>
+Weather: Clear<br>
+Visibility: Good<br>
+Status: Recording
 
 </div>
 
 <div class="box">
 
-<h3>Water Telemetry</h3>
+<h3>Observed Species</h3>
 
-<div class="telemetry">
-TEMP: 74°F<br>
-PH: 7.4<br>
-CLARITY: GOOD<br>
-FLOW: STABLE
-</div>
+Bluegill<br>
+Rabbit Snail<br>
+Mystery Snail<br>
+Aquatic Insects
 
 </div>
 
 <div class="box">
 
-<h3>Detected Species</h3>
+<h3>Station Information</h3>
 
-<div class="telemetry">
-► BLUEGILL<br>
-► RABBIT SNAIL<br>
-► MYSTERY SNAIL<br>
-► UNKNOWN SHADOW
-</div>
+Observation Station 7<br>
+Operational Since 1997<br>
+Monitoring Active
 
 </div>
 
 <div class="box">
 
-<h3>Visitor Count</h3>
+<h3>Visitor Log</h3>
 
 <div class="counter">
 000042
@@ -320,15 +290,17 @@ FLOW: STABLE
 
 <div class="box">
 
-<h3>Node 07 Log</h3>
+<h3>Observer's Log</h3>
 
-Monitoring station activated in 1997 as part of the North American
-Aquatic Monitoring Network.
+<div class="log">
 
-Node 07 remains operational and continues recording biological
-activity within the observation zone.
+06.20.2026 — Water conditions stable. Fish activity increased near dusk.
 
-No anomalous events have been reported.
+06.19.2026 — Minor algae growth observed along western edge of tank.
+
+06.18.2026 — Rabbit snail feeding activity recorded throughout evening hours.
+
+</div>
 
 </div>
 
@@ -340,21 +312,20 @@ No anomalous events have been reported.
 
 <h3>Recent Sightings</h3>
 
-06/20/26 - Bluegill<br>
-06/19/26 - Rabbit Snail<br>
-06/18/26 - Mystery Snail<br>
-06/17/26 - Unknown Reflection
+Bluegill<br>
+Rabbit Snail<br>
+Mystery Snail<br>
+Mosquito Larvae
 
 </div>
 
 <div class="box">
 
-<h3>System Notes</h3>
+<h3>Field Notes</h3>
 
-Several unexplained shadows have been observed during nighttime
-recording periods.
+This station documents aquatic behavior and ecosystem dynamics within a planted freshwater environment.
 
-Review archived footage if unusual movement is detected.
+Long-term observations assist in understanding feeding behavior, habitat use, and seasonal changes.
 
 </div>
 
@@ -362,7 +333,7 @@ Review archived footage if unusual movement is detected.
 
 <div class="footer">
 
-FISHCAM.NET • NODE 07 • AQUATIC MONITORING NETWORK
+FishCam.net • Marine Observation Station • Observation Node 7
 
 </div>
 
