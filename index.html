@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FishCam.net - Aquatic Observation Project</title>
+<title>FishCam.net</title>
 
 <style>
 
@@ -15,8 +15,7 @@
 body{
     margin:0;
     background:#d8d0b0;
-    font-family:Verdana, Arial, sans-serif;
-    color:#000;
+    font-family:Verdana,Arial,sans-serif;
 }
 
 #container{
@@ -29,66 +28,54 @@ body{
 }
 
 header{
-    background:#6b7b70;
+    background:#6a776d;
     color:white;
     text-align:center;
     padding:25px;
-    border-bottom:3px solid #c2b280;
 }
 
 header h1{
     margin:0;
     font-size:64px;
-    font-weight:bold;
-}
-
-header p{
-    margin:3px 0;
-    font-size:16px;
 }
 
 .navbar{
-    background:#a5ae97;
+    background:#9da891;
     text-align:center;
-    padding:14px;
-    border-bottom:2px solid #6a7565;
+    padding:12px;
 }
 
 .navbar a{
     color:white;
     text-decoration:none;
-    margin:0 25px;
+    margin:0 20px;
     font-weight:bold;
-    font-size:15px;
 }
 
-.main{
+.main-top{
     display:flex;
+    gap:15px;
+    padding:15px;
     align-items:flex-start;
 }
 
-.content{
+.video-column{
     flex:1;
-    padding:18px;
 }
 
 .sidebar{
     width:260px;
     flex-shrink:0;
-    padding:12px;
-    background:#e5dfc8;
-    border-left:2px solid #b5aa88;
 }
 
 .stream-title{
-    font-size:20px;
+    font-size:28px;
     font-weight:bold;
-    margin-bottom:12px;
     color:#35584b;
+    margin-bottom:10px;
 }
 
 .stream-box{
-    width:100%;
     background:black;
     border:4px solid #7b9b76;
     padding:8px;
@@ -102,8 +89,7 @@ header p{
 
 .stream-wrapper iframe{
     position:absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
     border:none;
@@ -124,33 +110,45 @@ header p{
     font-size:14px;
 }
 
+.full-width{
+    padding:0 15px 15px 15px;
+}
+
+.bottom-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:0 15px 15px 15px;
+}
+
 .counter{
     background:black;
     color:#00ff00;
-    font-family:Courier New, monospace;
     text-align:center;
-    padding:6px;
-    font-size:18px;
+    padding:8px;
+    font-family:Courier New,monospace;
+    font-size:20px;
 }
 
 .footer{
-    text-align:center;
-    padding:15px;
     background:#45685c;
     color:white;
-    border-top:2px solid #c2b280;
+    text-align:center;
+    padding:15px;
 }
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-.main{
+.main-top{
     flex-direction:column;
 }
 
 .sidebar{
     width:100%;
-    border-left:none;
-    border-top:2px solid #b5aa88;
+}
+
+.bottom-grid{
+    grid-template-columns:1fr;
 }
 
 header h1{
@@ -179,25 +177,21 @@ header h1{
 <a href="#">About</a>
 </div>
 
-<div class="main">
+<div class="main-top">
 
-<div class="content">
+<div class="video-column">
 
 <div class="stream-title">
 LIVE CAMERA FEED
 </div>
 
 <div class="stream-box">
-
 <div class="stream-wrapper">
-
 <iframe
 src="https://player.twitch.tv/?channel=unnamed_tributary&parent=lwise12.github.io"
 allowfullscreen>
 </iframe>
-
 </div>
-
 </div>
 
 </div>
@@ -221,32 +215,52 @@ Time: Night Observation
 <div class="box">
 <h3>Fish of the Week</h3>
 <b>Bluegill</b><br><br>
-Bluegill are among the most common freshwater fish in North America and consume large quantities of aquatic insects.
-</div>
-
-<div class="box">
-<h3>Interesting Fact</h3>
-Many fish can detect vibrations through a specialized sensory organ called the lateral line.
-</div>
-
-<div class="box">
-<h3>Camera Notes</h3>
-Location: Indoor planted aquarium.<br><br>
-Night viewing is provided through infrared illumination.
-</div>
-
-<div class="box">
-<h3>Recent Sightings</h3>
-06/20/26 - Bluegill<br>
-06/19/26 - Rabbit Snail<br>
-06/18/26 - Mystery Snail<br>
-06/17/26 - Mosquito Larvae
+Bluegill are among the most common freshwater fish in North America.
 </div>
 
 <div class="box">
 <h3>Visitor Counter</h3>
 <div class="counter">000042</div>
 </div>
+
+</div>
+
+</div>
+
+<div class="full-width">
+
+<div class="box">
+<h3>About This Aquarium</h3>
+
+This live camera monitors a heavily planted freshwater aquarium.
+The stream operates continuously and allows observation of fish
+behavior, snail activity, feeding events, and plant growth.
+
+</div>
+
+</div>
+
+<div class="bottom-grid">
+
+<div class="box">
+
+<h3>Recent Sightings</h3>
+
+06/20/26 - Bluegill<br>
+06/19/26 - Rabbit Snail<br>
+06/18/26 - Mystery Snail<br>
+06/17/26 - Mosquito Larvae
+
+</div>
+
+<div class="box">
+
+<h3>Interesting Facts</h3>
+
+Many fish can detect movement through their lateral line system.
+
+Aquatic plants help remove excess nutrients from the water and
+provide shelter for fish and invertebrates.
 
 </div>
 
