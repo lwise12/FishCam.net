@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FishCam.net - Marine Observation Station</title>
+<title>Marine Observation System - Station 07</title>
 
 <style>
 
@@ -14,65 +15,56 @@
 
 body{
     margin:0;
-    background:#0f1314;
-    color:#d7cfb3;
-    font-family:Georgia, serif;
-    background-image:
-        radial-gradient(circle at top, rgba(60,80,80,.35), transparent 40%);
+    background:#081015;
+    color:#d7dfdd;
+    font-family:Arial,sans-serif;
 }
 
 #container{
     width:95%;
-    max-width:1400px;
+    max-width:1500px;
     margin:20px auto;
-    background:#1a2020;
-    border:2px solid #4f5d57;
-    box-shadow:0 0 30px rgba(0,0,0,.7);
+    background:#10181d;
+    border:2px solid #30434d;
+    box-shadow:0 0 40px rgba(0,0,0,.5);
 }
 
 header{
-    text-align:center;
-    padding:40px;
-    background:
-        linear-gradient(
-            to bottom,
-            #2f3a39,
-            #1a2020
-        );
-    border-bottom:2px solid #5e6a62;
+    background:#111b20;
+    border-bottom:2px solid #30434d;
+    padding:20px 25px;
 }
 
-header h1{
-    margin:0;
-    font-size:72px;
-    color:#d7cfb3;
-    letter-spacing:4px;
-    text-transform:uppercase;
+.system-title{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:#d8e0dd;
 }
 
-header p{
-    margin:6px;
-    color:#9ea38f;
-    letter-spacing:2px;
-    text-transform:uppercase;
+.system-subtitle{
+    font-family:Courier New,monospace;
+    color:#8fb7a8;
+    margin-top:8px;
+    font-size:15px;
 }
 
 .navbar{
-    background:#232a29;
-    text-align:center;
-    padding:12px;
-    border-bottom:1px solid #4f5d57;
+    background:#0d1519;
+    border-bottom:1px solid #30434d;
+    padding:12px 25px;
+    font-family:Courier New,monospace;
 }
 
 .navbar a{
-    color:#b8ad84;
+    color:#8fb7a8;
     text-decoration:none;
-    margin:0 20px;
+    margin-right:30px;
     font-weight:bold;
 }
 
 .navbar a:hover{
-    color:white;
+    color:#d7dfdd;
 }
 
 .main-top{
@@ -86,22 +78,30 @@ header p{
 }
 
 .sidebar{
-    width:300px;
-    flex-shrink:0;
+    width:320px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
-.stream-title{
-    font-size:24px;
-    margin-bottom:10px;
-    color:#c8b88a;
-    letter-spacing:2px;
+.panel{
+    background:#141f24;
+    border:1px solid #30434d;
+}
+
+.panel-header{
+    background:#0d1519;
+    border-bottom:1px solid #30434d;
+    padding:10px 12px;
+    font-family:Courier New,monospace;
+    color:#8fb7a8;
     text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:14px;
 }
 
-.stream-box{
-    background:#0a0d0d;
-    border:3px solid #5e6a62;
-    padding:10px;
+.panel-body{
+    padding:12px;
 }
 
 .stream-wrapper{
@@ -112,61 +112,51 @@ header p{
 
 .stream-wrapper iframe{
     position:absolute;
-    inset:0;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
     border:none;
 }
 
-.box{
-    background:#232827;
-    border:1px solid #4f5d57;
-    margin-bottom:12px;
-    padding:10px;
+.telemetry{
+    font-family:Courier New,monospace;
+    line-height:1.9;
 }
 
-.box h3{
-    margin:0 0 10px 0;
-    color:#c8b88a;
-    border-bottom:1px solid #4f5d57;
-    padding-bottom:5px;
-    text-transform:uppercase;
-    letter-spacing:1px;
+.value{
+    color:#8fb7a8;
 }
 
-.full-width{
+.good{
+    color:#98d89c;
+}
+
+.warning{
+    color:#d9c17f;
+}
+
+.log-section{
     padding:0 15px 15px 15px;
 }
 
 .bottom-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(3,1fr);
     gap:15px;
     padding:0 15px 15px 15px;
 }
 
-.log{
-    font-family:"Courier New", monospace;
-    color:#b9c0a3;
-    line-height:1.7;
-}
-
-.counter{
-    text-align:center;
-    font-size:22px;
-    letter-spacing:3px;
-    color:#d7cfb3;
-}
-
 .footer{
+    background:#0d1519;
+    border-top:1px solid #30434d;
     text-align:center;
     padding:15px;
-    background:#151919;
-    border-top:1px solid #4f5d57;
-    color:#8d9384;
+    color:#7f9994;
+    font-family:Courier New,monospace;
 }
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
 .main-top{
     flex-direction:column;
@@ -180,8 +170,8 @@ header p{
     grid-template-columns:1fr;
 }
 
-header h1{
-    font-size:42px;
+.system-title{
+    font-size:28px;
 }
 
 }
@@ -195,34 +185,34 @@ header h1{
 
 <header>
 
-<h1>FishCam.net</h1>
+<div class="system-title">
+MARINE OBSERVATION SYSTEM
+</div>
 
-<p>Marine Observation Station</p>
-
-<p>Field Research Feed • Established 1997</p>
+<div class="system-subtitle">
+STATION 07 // SOUTH RIVER NODE // AQUATIC MONITORING NETWORK
+</div>
 
 </header>
 
 <div class="navbar">
-
-<a href="#">Home</a>
-<a href="#">Species</a>
-<a href="#">Field Notes</a>
-<a href="#">Archive</a>
-
+<a href="#">CAMERAS</a>
+<a href="#">SPECIES</a>
+<a href="#">DETECTION LOG</a>
+<a href="#">ARCHIVE</a>
 </div>
 
 <div class="main-top">
 
 <div class="video-column">
 
-<div class="stream-title">
+<div class="panel">
 
-Observation Camera No. 1
-
+<div class="panel-header">
+CAMERA 01 - PRIMARY OBSERVATION FEED
 </div>
 
-<div class="stream-box">
+<div class="panel-body">
 
 <div class="stream-wrapper">
 
@@ -237,67 +227,109 @@ allowfullscreen>
 
 </div>
 
+</div>
+
 <div class="sidebar">
 
-<div class="box">
+<div class="panel">
 
-<h3>Current Conditions</h3>
-
-Water Temperature: 74°F<br>
-Weather: Clear<br>
-Visibility: Good<br>
-Status: Recording
-
+<div class="panel-header">
+SYSTEM STATUS
 </div>
 
-<div class="box">
+<div class="panel-body telemetry">
 
-<h3>Observed Species</h3>
+CAMERA:
+<span class="good">ONLINE</span><br>
 
-Bluegill<br>
-Rabbit Snail<br>
-Mystery Snail<br>
-Aquatic Insects
+RECORDING:
+<span class="good">ACTIVE</span><br>
 
-</div>
+UPTIME:
+<span class="value">1,274 HOURS</span><br>
 
-<div class="box">
-
-<h3>Station Information</h3>
-
-Observation Station 7<br>
-Operational Since 1997<br>
-Monitoring Active
-
-</div>
-
-<div class="box">
-
-<h3>Visitor Log</h3>
-
-<div class="counter">
-000042
-</div>
+SIGNAL:
+<span class="value">98%</span>
 
 </div>
 
 </div>
 
+<div class="panel">
+
+<div class="panel-header">
+WATER CONDITIONS
 </div>
 
-<div class="full-width">
+<div class="panel-body telemetry">
 
-<div class="box">
+TEMP:
+<span class="value">74°F</span><br>
 
-<h3>Observer's Log</h3>
+PH:
+<span class="value">7.4</span><br>
 
-<div class="log">
+VISIBILITY:
+<span class="good">GOOD</span><br>
 
-06.20.2026 — Water conditions stable. Fish activity increased near dusk.
+FLOW:
+<span class="good">STABLE</span>
 
-06.19.2026 — Minor algae growth observed along western edge of tank.
+</div>
 
-06.18.2026 — Rabbit snail feeding activity recorded throughout evening hours.
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+BIOLOGICAL ACTIVITY
+</div>
+
+<div class="panel-body telemetry">
+
+BLUEGILL<br>
+RABBIT SNAIL<br>
+MYSTERY SNAIL<br>
+AQUATIC INSECTS
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+OBSERVER COUNT
+</div>
+
+<div class="panel-body telemetry">
+
+CURRENT:
+<span class="value">42</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="log-section">
+
+<div class="panel">
+
+<div class="panel-header">
+DETECTION LOG
+</div>
+
+<div class="panel-body telemetry">
+
+06/20/26 22:14 — BLUEGILL DETECTED<br>
+06/20/26 21:58 — SNAIL ACTIVITY OBSERVED<br>
+06/20/26 21:12 — FEEDING EVENT RECORDED<br>
+06/20/26 20:44 — WATER CLARITY NORMAL<br>
+06/20/26 20:10 — CAMERA CHECK PASSED
 
 </div>
 
@@ -307,24 +339,48 @@ Monitoring Active
 
 <div class="bottom-grid">
 
-<div class="box">
+<div class="panel">
 
-<h3>Recent Sightings</h3>
+<div class="panel-header">
+SPECIES DATABASE
+</div>
 
-Bluegill<br>
-Rabbit Snail<br>
-Mystery Snail<br>
-Mosquito Larvae
+<div class="panel-body">
+
+Bluegill remain the most frequently observed species within the monitoring area.
 
 </div>
 
-<div class="box">
+</div>
 
-<h3>Field Notes</h3>
+<div class="panel">
 
-This station documents aquatic behavior and ecosystem dynamics within a planted freshwater environment.
+<div class="panel-header">
+RESEARCH NOTES
+</div>
 
-Long-term observations assist in understanding feeding behavior, habitat use, and seasonal changes.
+<div class="panel-body">
+
+Long-term observation of feeding patterns, plant growth, and aquatic ecosystem stability.
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+STATION DATA
+</div>
+
+<div class="panel-body telemetry">
+
+NODE: SR-07<br>
+STATUS: ACTIVE<br>
+ESTABLISHED: 1997<br>
+LAST SERVICE: 06/15/26
+
+</div>
 
 </div>
 
@@ -332,7 +388,7 @@ Long-term observations assist in understanding feeding behavior, habitat use, an
 
 <div class="footer">
 
-FishCam.net • Marine Observation Station • Observation Node 7
+MARINE OBSERVATION SYSTEM // STATION 07 // ACTIVE
 
 </div>
 
