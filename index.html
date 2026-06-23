@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,12 +186,18 @@ Loading...
 </div>
 
 <script>
-fetch("https://api.countapi.xyz/hit/fishcamnet/visits")
-.then(response => response.json())
-.then(data => {
-    document.getElementById("counter").innerText =
-        data.value.toString().padStart(6,"0");
-});
+let count = localStorage.getItem("fishcam-counter");
+
+if(count === null){
+    count = 11;
+}else{
+    count = parseInt(count) + 1;
+}
+
+localStorage.setItem("fishcam-counter", count);
+
+document.getElementById("counter").textContent =
+String(count).padStart(6,"0");
 </script>
 
 </div>
