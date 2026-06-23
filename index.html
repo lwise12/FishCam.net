@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,75 +12,53 @@ body{
     margin:0;
     font-family:Verdana, Arial, sans-serif;
 
-    /* Replace this with your own tiled underwater image later */
-    background:#0f5d73;
-    background-image:
-        radial-gradient(circle at 25% 25%, rgba(255,255,255,.08) 0%, transparent 20%),
-        radial-gradient(circle at 75% 75%, rgba(255,255,255,.08) 0%, transparent 20%);
+    background:#35637d;
+    color:#000;
 }
 
+/* MAIN PAGE */
+
 #container{
-    width:1000px;
-    margin:20px auto;
+    width:95%;
+    max-width:1600px;
+    margin:auto;
+    padding:20px;
 }
+
+/* HEADER */
 
 .header{
     text-align:center;
-    background:#d7f4ff;
-    border:3px outset white;
-    padding:15px;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .header h1{
     margin:0;
-    font-size:48px;
-    color:#005577;
+    font-size:72px;
+    color:#d9ecff;
+    text-shadow:2px 2px #23465a;
 }
 
 .header p{
     margin:5px;
-}
-
-.layout{
-    display:flex;
-    gap:15px;
-}
-
-.sidebar{
-    width:220px;
-}
-
-.main{
-    flex:1;
-}
-
-.box{
-    background:#ffffff;
-    border:3px outset #d0d0d0;
-    padding:10px;
-    margin-bottom:15px;
-}
-
-.box h3{
-    margin-top:0;
-    color:#004466;
-    border-bottom:1px solid #cccccc;
-    padding-bottom:5px;
-}
-
-.camera-box{
-    background:#ffffff;
-    border:3px outset #d0d0d0;
-    padding:10px;
-    margin-bottom:15px;
-}
-
-.camera-title{
+    color:white;
     font-size:22px;
-    font-weight:bold;
-    margin-bottom:10px;
+}
+
+/* STREAM */
+
+.stream-box{
+    background:#d7e7f2;
+    border:3px outset white;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.stream-title{
     text-align:center;
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 .stream-wrapper{
@@ -99,51 +76,76 @@ body{
     border:none;
 }
 
-.counter{
-    background:black;
-    color:#00ff00;
-    text-align:center;
-    padding:8px;
-    font-family:"Courier New", monospace;
-    font-size:20px;
-}
+/* COUNTER */
 
-.footer{
-    margin-top:15px;
-    background:#d7f4ff;
+.counter-box{
+    width:250px;
+    margin:0 auto 30px auto;
+    background:#d7e7f2;
     border:3px outset white;
     text-align:center;
     padding:10px;
-    font-size:12px;
+}
+
+.counter-title{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.counter{
+    background:black;
+    color:#00ff00;
+    padding:10px;
+    font-family:"Courier New", monospace;
+    font-size:26px;
+}
+
+/* RESIDENTS */
+
+.residents-box{
+    background:#d7e7f2;
+    border:3px outset white;
+    padding:20px;
+}
+
+.residents-box h2{
+    text-align:center;
+    margin-top:0;
+}
+
+.resident-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
 .resident{
+    background:white;
+    border:2px solid #999;
     text-align:center;
-    margin-bottom:15px;
+    padding:10px;
 }
 
 .resident img{
     width:100%;
-    max-width:180px;
-    border:2px solid #999;
+    height:180px;
+    object-fit:cover;
+    background:#ddd;
 }
 
-.nav{
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.nav a{
-    margin:0 10px;
-    color:#004466;
+.resident-name{
+    margin-top:10px;
     font-weight:bold;
+    font-size:18px;
 }
 
-.marquee{
-    background:#ffffcc;
-    border:2px solid #cccc99;
-    padding:8px;
-    margin-bottom:15px;
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:white;
+    font-size:14px;
 }
 
 </style>
@@ -157,76 +159,13 @@ body{
 
 <h1>FishCam.net</h1>
 
-<p>~ Live Fish Watching Since 2026 ~</p>
-
-<p>
-🐟 Freshwater Aquarium Livestream 🐟
-</p>
+<p>~ Live Freshwater Aquarium ~</p>
 
 </div>
 
-<div class="nav">
+<div class="stream-box">
 
-<a href="#">Home</a> |
-<a href="#">Fish Facts</a> |
-<a href="#">Residents</a> |
-<a href="#">Photos</a>
-
-</div>
-
-<div class="marquee">
-
-Welcome to FishCam.net! This camera streams my aquarium live 24 hours a day.
-
-</div>
-
-<div class="layout">
-
-<div class="sidebar">
-
-<div class="box">
-
-<h3>Tank Information</h3>
-
-Tank Size: 15 Gallons<br><br>
-
-Residents:<br>
-• Bluegill<br>
-• Rabbit Snails<br>
-• Mystery Snail<br><br>
-
-Plants:<br>
-• Pothos<br>
-• Java Fern<br>
-• Duckweed
-
-</div>
-
-<div class="box">
-
-<h3>Visitor Counter</h3>
-
-<div class="counter">
-000042
-</div>
-
-</div>
-
-<div class="box">
-
-<h3>Fish Fact</h3>
-
-Bluegill can detect vibrations in the water using a sensory organ called the lateral line.
-
-</div>
-
-</div>
-
-<div class="main">
-
-<div class="camera-box">
-
-<div class="camera-title">
+<div class="stream-title">
 LIVE AQUARIUM CAMERA
 </div>
 
@@ -241,78 +180,47 @@ allowfullscreen>
 
 </div>
 
-<div class="box">
+<div class="counter-box">
 
-<h3>About This Aquarium</h3>
+<div class="counter-title">
+Visitors Since Launch
+</div>
 
-This aquarium is home to a bluegill, rabbit snails,
-mystery snails, and a variety of aquatic plants.
-
-The stream runs continuously so visitors can watch
-the fish, snails, and plants at any time.
-
-FishCam.net started as a personal project to share
-my aquarium online.
+<div class="counter">
+000042
+</div>
 
 </div>
 
-<div class="box">
+<div class="residents-box">
 
-<h3>Meet the Residents</h3>
+<h2>Meet the Residents</h2>
+
+<div class="resident-grid">
 
 <div class="resident">
-
-<img src="bluegill.jpg" alt="Bluegill">
-
-<br><br>
-
-<b>Bluegill</b><br>
-
-The largest resident of the aquarium.
-
+<img src="giant-danio.jpg" alt="Giant Danio">
+<div class="resident-name">Giant Danio</div>
 </div>
 
 <div class="resident">
-
-<img src="rabbit-snail.jpg" alt="Rabbit Snail">
-
-<br><br>
-
-<b>Rabbit Snail</b><br>
-
-Often seen grazing on algae and surfaces.
-
+<img src="lamp-eye-tetra.jpg" alt="Lamp-eye Tetra">
+<div class="resident-name">Lamp-eye Tetra</div>
 </div>
 
+<div class="resident">
+<img src="ember-tetra.jpg" alt="Ember Tetra">
+<div class="resident-name">Ember Tetra</div>
 </div>
 
+<div class="resident">
+<img src="platy.jpg" alt="Platy">
+<div class="resident-name">Platy</div>
 </div>
 
-<div class="sidebar">
-
-<div class="box">
-
-<h3>Fish Facts</h3>
-
-• Bluegill are native to North America.<br><br>
-
-• Rabbit snails can live for several years.<br><br>
-
-• Fish can see color.<br><br>
-
-• Many aquatic plants help remove excess nutrients from water.
-
-</div>
-
-<div class="box">
-
-<h3>Links</h3>
-
-Home<br>
-Fish Facts<br>
-Residents<br>
-Photos
-
+<div class="resident">
+<img src="golden-mystery-snail.jpg" alt="Golden Mystery Snail">
+<div class="resident-name">Golden Mystery Snail</div>
 </div>
 
 </div>
@@ -320,10 +228,6 @@ Photos
 </div>
 
 <div class="footer">
-
-Last Updated: June 2026<br>
-
-Best viewed on a desktop computer.<br>
 
 FishCam.net © 2026
 
