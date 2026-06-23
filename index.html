@@ -182,9 +182,18 @@ body{
 Visitors Since Launch
 </div>
 
-<div class="counter">
-000042
+<div class="counter" id="counter">
+Loading...
 </div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/fishcamnet/visits")
+.then(response => response.json())
+.then(data => {
+    document.getElementById("counter").innerText =
+        data.value.toString().padStart(6,"0");
+});
+</script>
 
 </div>
 
