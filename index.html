@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +35,7 @@ body{
     margin:0;
     font-size:72px;
     color:#f2f0dd;
+
     text-shadow:
         2px 2px #374028,
         4px 4px #222;
@@ -45,13 +47,33 @@ body{
     font-size:22px;
 }
 
+.visitor-counter{
+    display:inline-block;
+    margin-top:15px;
+    background:#d7d1b3;
+    border:3px outset #c9c19d;
+    padding:10px 20px;
+}
+
+.visitor-title{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.counter{
+    background:black;
+    color:#00ff00;
+    font-family:"Courier New", monospace;
+    font-size:26px;
+    padding:6px 20px;
+}
+
 /* STREAM */
 
 .stream-box{
     background:#d7d1b3;
     border:3px outset #c9c19d;
     padding:15px;
-    margin-bottom:20px;
 }
 
 .stream-title{
@@ -76,33 +98,10 @@ body{
     border:none;
 }
 
-/* COUNTER */
-
-.counter-box{
-    width:250px;
-    margin:0 auto 30px auto;
-    background:#d7d1b3;
-    border:3px outset #c9c19d;
-    text-align:center;
-    padding:10px;
-}
-
-.counter-title{
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.counter{
-    background:black;
-    color:#00ff00;
-    font-family:"Courier New", monospace;
-    font-size:28px;
-    padding:8px;
-}
-
 /* RESIDENTS */
 
 .residents-box{
+    margin-top:40px;
     background:#d7d1b3;
     border:3px outset #c9c19d;
     padding:20px;
@@ -172,14 +171,29 @@ body{
 <div id="container">
 
 <div class="header">
+
 <h1>FishCam.net</h1>
-<p>~ Live Freshwater Aquarium ~</p>
+
+<p>~ Freshwater Aquarium ~</p>
+
+<div class="visitor-counter">
+
+<div class="visitor-title">
+Visitors Since Launch
+</div>
+
+<div class="counter">
+000042
+</div>
+
+</div>
+
 </div>
 
 <div class="stream-box">
 
 <div class="stream-title">
-LIVE AQUARIUM CAMERA
+Aquarium Feed
 </div>
 
 <div class="stream-wrapper">
@@ -190,18 +204,6 @@ allow="autoplay"
 allowfullscreen>
 </iframe>
 
-</div>
-
-</div>
-
-<div class="counter-box">
-
-<div class="counter-title">
-Visitors Since Launch
-</div>
-
-<div class="counter">
-000042
 </div>
 
 </div>
