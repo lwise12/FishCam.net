@@ -1,106 +1,87 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Marine Observation System - Station 07</title>
+<title>FishCam.net</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
-}
-
 body{
     margin:0;
-    background:#081015;
-    color:#d7dfdd;
-    font-family:Arial,sans-serif;
+    font-family:Verdana, Arial, sans-serif;
+
+    /* Replace this with your own tiled underwater image later */
+    background:#0f5d73;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,.08) 0%, transparent 20%),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,.08) 0%, transparent 20%);
 }
 
 #container{
-    width:95%;
-    max-width:1500px;
+    width:1000px;
     margin:20px auto;
-    background:#10181d;
-    border:2px solid #30434d;
-    box-shadow:0 0 40px rgba(0,0,0,.5);
 }
 
-header{
-    background:#111b20;
-    border-bottom:2px solid #30434d;
-    padding:20px 25px;
+.header{
+    text-align:center;
+    background:#d7f4ff;
+    border:3px outset white;
+    padding:15px;
+    margin-bottom:15px;
 }
 
-.system-title{
-    font-size:38px;
-    font-weight:bold;
-    letter-spacing:3px;
-    color:#d8e0dd;
+.header h1{
+    margin:0;
+    font-size:48px;
+    color:#005577;
 }
 
-.system-subtitle{
-    font-family:Courier New,monospace;
-    color:#8fb7a8;
-    margin-top:8px;
-    font-size:15px;
+.header p{
+    margin:5px;
 }
 
-.navbar{
-    background:#0d1519;
-    border-bottom:1px solid #30434d;
-    padding:12px 25px;
-    font-family:Courier New,monospace;
-}
-
-.navbar a{
-    color:#8fb7a8;
-    text-decoration:none;
-    margin-right:30px;
-    font-weight:bold;
-}
-
-.navbar a:hover{
-    color:#d7dfdd;
-}
-
-.main-top{
+.layout{
     display:flex;
     gap:15px;
-    padding:15px;
-}
-
-.video-column{
-    flex:1;
 }
 
 .sidebar{
-    width:320px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+    width:220px;
 }
 
-.panel{
-    background:#141f24;
-    border:1px solid #30434d;
+.main{
+    flex:1;
 }
 
-.panel-header{
-    background:#0d1519;
-    border-bottom:1px solid #30434d;
-    padding:10px 12px;
-    font-family:Courier New,monospace;
-    color:#8fb7a8;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-size:14px;
+.box{
+    background:#ffffff;
+    border:3px outset #d0d0d0;
+    padding:10px;
+    margin-bottom:15px;
 }
 
-.panel-body{
-    padding:12px;
+.box h3{
+    margin-top:0;
+    color:#004466;
+    border-bottom:1px solid #cccccc;
+    padding-bottom:5px;
+}
+
+.camera-box{
+    background:#ffffff;
+    border:3px outset #d0d0d0;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+.camera-title{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-align:center;
 }
 
 .stream-wrapper{
@@ -118,61 +99,51 @@ header{
     border:none;
 }
 
-.telemetry{
-    font-family:Courier New,monospace;
-    line-height:1.9;
-}
-
-.value{
-    color:#8fb7a8;
-}
-
-.good{
-    color:#98d89c;
-}
-
-.warning{
-    color:#d9c17f;
-}
-
-.log-section{
-    padding:0 15px 15px 15px;
-}
-
-.bottom-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    padding:0 15px 15px 15px;
+.counter{
+    background:black;
+    color:#00ff00;
+    text-align:center;
+    padding:8px;
+    font-family:"Courier New", monospace;
+    font-size:20px;
 }
 
 .footer{
-    background:#0d1519;
-    border-top:1px solid #30434d;
+    margin-top:15px;
+    background:#d7f4ff;
+    border:3px outset white;
     text-align:center;
-    padding:15px;
-    color:#7f9994;
-    font-family:Courier New,monospace;
+    padding:10px;
+    font-size:12px;
 }
 
-@media(max-width:1100px){
-
-.main-top{
-    flex-direction:column;
+.resident{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-.sidebar{
+.resident img{
     width:100%;
+    max-width:180px;
+    border:2px solid #999;
 }
 
-.bottom-grid{
-    grid-template-columns:1fr;
+.nav{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-.system-title{
-    font-size:28px;
+.nav a{
+    margin:0 10px;
+    color:#004466;
+    font-weight:bold;
 }
 
+.marquee{
+    background:#ffffcc;
+    border:2px solid #cccc99;
+    padding:8px;
+    margin-bottom:15px;
 }
 
 </style>
@@ -182,45 +153,134 @@ header{
 
 <div id="container">
 
-<header>
+<div class="header">
 
-<div class="system-title">
-MARINE OBSERVATION SYSTEM
+<h1>FishCam.net</h1>
+
+<p>~ Live Fish Watching Since 2026 ~</p>
+
+<p>
+🐟 Freshwater Aquarium Livestream 🐟
+</p>
+
 </div>
 
-<div class="system-subtitle">
-STATION 07 // SOUTH RIVER NODE // AQUATIC MONITORING NETWORK
+<div class="nav">
+
+<a href="#">Home</a> |
+<a href="#">Fish Facts</a> |
+<a href="#">Residents</a> |
+<a href="#">Photos</a>
+
 </div>
 
-</header>
+<div class="marquee">
 
-<div class="navbar">
-<a href="#">CAMERAS</a>
-<a href="#">SPECIES</a>
-<a href="#">DETECTION LOG</a>
-<a href="#">ARCHIVE</a>
+Welcome to FishCam.net! This camera streams my aquarium live 24 hours a day.
+
 </div>
 
-<div class="main-top">
+<div class="layout">
 
-<div class="video-column">
+<div class="sidebar">
 
-<div class="panel">
+<div class="box">
 
-<div class="panel-header">
-CAMERA 01 - PRIMARY OBSERVATION FEED
+<h3>Tank Information</h3>
+
+Tank Size: 15 Gallons<br><br>
+
+Residents:<br>
+• Bluegill<br>
+• Rabbit Snails<br>
+• Mystery Snail<br><br>
+
+Plants:<br>
+• Pothos<br>
+• Java Fern<br>
+• Duckweed
+
 </div>
 
-<div class="panel-body">
+<div class="box">
+
+<h3>Visitor Counter</h3>
+
+<div class="counter">
+000042
+</div>
+
+</div>
+
+<div class="box">
+
+<h3>Fish Fact</h3>
+
+Bluegill can detect vibrations in the water using a sensory organ called the lateral line.
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="camera-box">
+
+<div class="camera-title">
+LIVE AQUARIUM CAMERA
+</div>
 
 <div class="stream-wrapper">
 
 <iframe
-src="https://player.twitch.tv/?channel=unnamed_tributary&parent=lwise12.github.io"
+src="https://www.youtube.com/embed/tEPmFeUhGRI"
 allowfullscreen>
 </iframe>
 
 </div>
+
+</div>
+
+<div class="box">
+
+<h3>About This Aquarium</h3>
+
+This aquarium is home to a bluegill, rabbit snails,
+mystery snails, and a variety of aquatic plants.
+
+The stream runs continuously so visitors can watch
+the fish, snails, and plants at any time.
+
+FishCam.net started as a personal project to share
+my aquarium online.
+
+</div>
+
+<div class="box">
+
+<h3>Meet the Residents</h3>
+
+<div class="resident">
+
+<img src="bluegill.jpg" alt="Bluegill">
+
+<br><br>
+
+<b>Bluegill</b><br>
+
+The largest resident of the aquarium.
+
+</div>
+
+<div class="resident">
+
+<img src="rabbit-snail.jpg" alt="Rabbit Snail">
+
+<br><br>
+
+<b>Rabbit Snail</b><br>
+
+Often seen grazing on algae and surfaces.
 
 </div>
 
@@ -230,154 +290,28 @@ allowfullscreen>
 
 <div class="sidebar">
 
-<div class="panel">
+<div class="box">
 
-<div class="panel-header">
-SYSTEM STATUS
-</div>
+<h3>Fish Facts</h3>
 
-<div class="panel-body telemetry">
+• Bluegill are native to North America.<br><br>
 
-CAMERA:
-<span class="good">ONLINE</span><br>
+• Rabbit snails can live for several years.<br><br>
 
-RECORDING:
-<span class="good">ACTIVE</span><br>
+• Fish can see color.<br><br>
 
-UPTIME:
-<span class="value">1,274 HOURS</span><br>
-
-SIGNAL:
-<span class="value">98%</span>
+• Many aquatic plants help remove excess nutrients from water.
 
 </div>
 
-</div>
+<div class="box">
 
-<div class="panel">
+<h3>Links</h3>
 
-<div class="panel-header">
-WATER CONDITIONS
-</div>
-
-<div class="panel-body telemetry">
-
-TEMP:
-<span class="value">74°F</span><br>
-
-PH:
-<span class="value">7.4</span><br>
-
-VISIBILITY:
-<span class="good">GOOD</span><br>
-
-FLOW:
-<span class="good">STABLE</span>
-
-</div>
-
-</div>
-
-<div class="panel">
-
-<div class="panel-header">
-BIOLOGICAL ACTIVITY
-</div>
-
-<div class="panel-body telemetry">
-
-BLUEGILL<br>
-RABBIT SNAIL<br>
-MYSTERY SNAIL<br>
-AQUATIC INSECTS
-
-</div>
-
-</div>
-
-<div class="panel">
-
-<div class="panel-header">
-OBSERVER COUNT
-</div>
-
-<div class="panel-body telemetry">
-
-CURRENT:
-<span class="value">42</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="log-section">
-
-<div class="panel">
-
-<div class="panel-header">
-DETECTION LOG
-</div>
-
-<div class="panel-body telemetry">
-
-06/20/26 22:14 — BLUEGILL DETECTED<br>
-06/20/26 21:58 — SNAIL ACTIVITY OBSERVED<br>
-06/20/26 21:12 — FEEDING EVENT RECORDED<br>
-06/20/26 20:44 — WATER CLARITY NORMAL<br>
-06/20/26 20:10 — CAMERA CHECK PASSED
-
-</div>
-
-</div>
-
-</div>
-
-<div class="bottom-grid">
-
-<div class="panel">
-
-<div class="panel-header">
-SPECIES DATABASE
-</div>
-
-<div class="panel-body">
-
-Bluegill remain the most frequently observed species within the monitoring area.
-
-</div>
-
-</div>
-
-<div class="panel">
-
-<div class="panel-header">
-RESEARCH NOTES
-</div>
-
-<div class="panel-body">
-
-Long-term observation of feeding patterns, plant growth, and aquatic ecosystem stability.
-
-</div>
-
-</div>
-
-<div class="panel">
-
-<div class="panel-header">
-STATION DATA
-</div>
-
-<div class="panel-body telemetry">
-
-NODE: SR-07<br>
-STATUS: ACTIVE<br>
-ESTABLISHED: 1997<br>
-LAST SERVICE: 06/15/26
+Home<br>
+Fish Facts<br>
+Residents<br>
+Photos
 
 </div>
 
@@ -387,7 +321,11 @@ LAST SERVICE: 06/15/26
 
 <div class="footer">
 
-MARINE OBSERVATION SYSTEM // STATION 07 // ACTIVE
+Last Updated: June 2026<br>
+
+Best viewed on a desktop computer.<br>
+
+FishCam.net © 2026
 
 </div>
 
